@@ -1,0 +1,157 @@
+/* =================================
+   BASE
+================================= */
+
+.switch {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.switch input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* =================================
+   SLIDER
+================================= */
+
+.slider {
+  position: absolute;
+  inset: 0;
+
+  cursor: pointer;
+
+  background-color: var(--color-border-strong);
+  border: 1px solid var(--color-border);
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+
+  background-color: #ffffff;
+  border-radius: 50%;
+
+  transition: transform 0.2s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+/* =================================
+   SIZES
+================================= */
+
+/* SMALL */
+
+.sm {
+  width: 30px;
+  height: 18px;
+}
+
+.sm .slider {
+  border-radius: 18px;
+}
+
+.sm .slider::before {
+  width: 12px;
+  height: 12px;
+  left: 2px;
+  bottom: 2px;
+}
+
+.sm input:checked + .slider::before {
+  transform: translateX(12px);
+}
+
+/* MEDIUM */
+
+.md {
+  width: 38px;
+  height: 22px;
+}
+
+.md .slider {
+  border-radius: 22px;
+}
+
+.md .slider::before {
+  width: 14px;
+  height: 14px;
+  left: 3px;
+  bottom: 3px;
+}
+
+.md input:checked + .slider::before {
+  transform: translateX(16px);
+}
+
+/* LARGE */
+
+.lg {
+  width: 46px;
+  height: 26px;
+}
+
+.lg .slider {
+  border-radius: 26px;
+}
+
+.lg .slider::before {
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  bottom: 3px;
+}
+
+.lg input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* =================================
+   CHECKED
+================================= */
+
+.switch input:checked + .slider {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* =================================
+   HOVER
+================================= */
+
+.switch:hover input:not(:disabled) + .slider {
+  border-color: var(--color-primary);
+}
+
+/* =================================
+   FOCUS
+================================= */
+
+.switch input:focus-visible + .slider {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+}
+
+/* =================================
+   DISABLED
+================================= */
+
+.switch input:disabled + .slider {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.switch:has(input:disabled) {
+  cursor: not-allowed;
+}

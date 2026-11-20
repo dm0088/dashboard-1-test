@@ -1,0 +1,90 @@
+/* =================================
+   WIDGETS GRID
+================================= */
+
+.widgets {
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  gap: 5px;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  background-color: var(--color-bg-tertiary);
+}
+
+/* =================================
+   EXPANDED WIDGET
+================================= */
+
+.expandedWidget {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+/* =================================
+   HIDDEN WIDGET
+================================= */
+
+.hidden {
+  display: none;
+}
+
+/* =================================
+   WIDGET
+================================= */
+
+.widget {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+/* =================================
+   IFRAME
+================================= */
+
+.ifr {
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--color-bg);
+}
+
+.ifr iframe {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+
+/* =================================
+   CONTROL BUTTONS
+================================= */
+
+.controlButtons {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  display: flex;
+  gap: 5px;
+
+  z-index: 1;
+}
+
+/* =================================
+   TIMEOUT STATUS BAR
+================================= */
+
+.timeoutStatusBar {
+  height: 3px;
+  width: 100%;
+
+  background-color: var(--color-text-tertiary);
+}

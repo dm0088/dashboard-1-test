@@ -1,0 +1,143 @@
+:root,
+[data-theme="light"] {
+  /* =================================
+     BACKGROUNDS
+  ================================= */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f2f4f7;
+  --color-bg-tertiary: #ecf3fc;
+  --color-bg-hover: #f2f3f5;
+  --color-bg-active: #e9ebf0;
+  --color-bg-disabled: #f2f4f7;
+
+  /* =================================
+     TEXT
+  ================================= */
+  --color-text: #344054;
+  --color-text-secondary: #667085;
+  --color-text-tertiary: #98a2b3;
+  --color-text-disabled: #98a2b3;
+  --color-text-inverse: #ffffff;
+
+  /* =================================
+     BORDERS
+  ================================= */
+  --color-border: #d0d5dd;
+  --color-border-subtle: #e4e7ec;
+  --color-border-strong: #98a2b3;
+  --color-border-focus: #6366f1;
+
+  /* =================================
+     PRIMARY
+  ================================= */
+  --color-primary: #6366f1;
+  --color-primary-hover: #5558e8;
+  --color-primary-active: #484bd6;
+  --color-primary-subtle: #eef0ff;
+
+  /* =================================
+     STATUS
+  ================================= */
+  --color-success: #16a34a;
+  --color-success-bg: #dcfce7;
+
+  --color-warning: #d97706;
+  --color-warning-bg: #fef3c7;
+
+  --color-danger: #c00505;
+  --color-danger-hover: #a30404;
+  --color-danger-bg: #fee2e2;
+
+  --color-info: #0284c7;
+  --color-info-bg: #e0f2fe;
+
+  /* =================================
+     BUTTONS
+  ================================= */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary-hover);
+  --btn-primary-text: #ffffff;
+
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-hover: #f2f4f7;
+  --btn-secondary-text: #344054;
+
+  /* =================================
+     SHADOWS
+  ================================= */
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
+  --shadow-md: 0 2px 8px rgba(16, 24, 40, 0.10);
+  --shadow-lg: 0 4px 12px rgba(16, 24, 40, 0.12);
+}
+
+
+[data-theme="dark"] {
+  /* =================================
+     BACKGROUNDS
+  ================================= */
+  --color-bg: #17191f;
+  --color-bg-secondary: #22252d;
+  --color-bg-tertiary: #292e39;
+  --color-bg-hover: #303540;
+  --color-bg-active: #393f4b;
+  --color-bg-disabled: #252830;
+
+  /* =================================
+     TEXT
+  ================================= */
+  --color-text: #eaecf0;
+  --color-text-secondary: #b0b7c3;
+  --color-text-tertiary: #858e9d;
+  --color-text-disabled: #656d7a;
+  --color-text-inverse: #17191f;
+
+  /* =================================
+     BORDERS
+  ================================= */
+  --color-border: #414753;
+  --color-border-subtle: #303641;
+  --color-border-strong: #626c7b;
+  --color-border-focus: #818cf8;
+
+  /* =================================
+     PRIMARY
+  ================================= */
+  --color-primary: #818cf8;
+  --color-primary-hover: #929bff;
+  --color-primary-active: #6d78e8;
+  --color-primary-subtle: #303452;
+
+  /* =================================
+     STATUS
+  ================================= */
+  --color-success: #4ade80;
+  --color-success-bg: #173c2a;
+
+  --color-warning: #fbbf24;
+  --color-warning-bg: #45351b;
+
+  --color-danger: #f87171;
+  --color-danger-hover: #ef4444;
+  --color-danger-bg: #451f25;
+
+  --color-info: #38bdf8;
+  --color-info-bg: #15394c;
+
+  /* =================================
+     BUTTONS
+  ================================= */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary-hover);
+  --btn-primary-text: #17191f;
+
+  --btn-secondary-bg: #292e39;
+  --btn-secondary-hover: #303540;
+  --btn-secondary-text: #eaecf0;
+
+  /* =================================
+     SHADOWS
+  ================================= */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.20);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.30);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.40);
+}
