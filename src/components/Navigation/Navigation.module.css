@@ -34,3 +34,19 @@
   gap: 15px;
   padding: 10px;
 }
+
+/* Modal controls */
+
+.widgetEditForm{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px 5px;
+}
+
+
+.modalSaveButton{
+  
+  margin-top: 20px;
+  width: 100%;
+
+}

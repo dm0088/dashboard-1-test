@@ -1,6 +1,7 @@
-// import styles from "./Input.module.css";
+
 import stylesGroup from "../commonStyles/controlGroup.module.css";
 import clsx from "clsx";
+import Input from "./Input";
 
 function InputGroup({
   label,
@@ -18,7 +19,13 @@ function InputGroup({
   ...rest
 }) {
   return (
-    <div className={clsx(stylesGroup.controlGroup, className, errorText && stylesGroup.isError)}>
+    <div
+      className={clsx(
+        stylesGroup.controlGroup,
+        className,
+        errorText && stylesGroup.isError
+      )}
+    >
       {label && (
         <label htmlFor={name}>
           {label}
@@ -26,8 +33,7 @@ function InputGroup({
         </label>
       )}
 
-      <input
-        id={name}
+      <Input
         name={name}
         type={type}
         value={value}
@@ -38,7 +44,11 @@ function InputGroup({
         className={inputClassName}
         {...rest}
       />
-      {errorText && <span className={stylesGroup.errorLabel}>{errorText}</span>}
+
+      {errorText && (
+        <span className={stylesGroup.errorLabel}>{errorText}</span>
+      )}
+
       {hint && <span className={stylesGroup.hint}>{hint}</span>}
     </div>
   );

@@ -1,0 +1,20 @@
+.widget-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px 16px;
+    width: 100%;
+}
+
+.column-label {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.widget-form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #D5DCE3;
+    border-radius: 6px;
+    outline: none;
+}
