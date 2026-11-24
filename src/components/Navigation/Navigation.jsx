@@ -8,7 +8,7 @@ import { Toggle, ToggleGroup } from "../Toggle/Toggle";
 import Modal from "../Modal/Modal";
 
 import { ChevronsLeft, ChevronsRight } from "lucide-react";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 
 function Navigation({ open, onToggle, timeoutValue, onTimerChange, widgetList, onThemeToggle, onWidgetListChange }) {
   const [timeoutInputValue, setTimeoutInputValue] = useState(String(timeoutValue));
@@ -92,10 +92,11 @@ function Navigation({ open, onToggle, timeoutValue, onTimerChange, widgetList, o
         <p className={stylesCommon.label}>Widget name</p>
         <p className={stylesCommon.label}>Widget URL</p>
         {editedWidget.map((widget) => (
-          <>
+          <Fragment key={widget.id}>
             <Input value={widget.name} onChange={(e)=>handleChange(widget.id, "name", e.target.value)}></Input>
             <Input value={widget.url} onChange={(e)=>handleChange(widget.id, "url", e.target.value)}></Input>
-          </>
+          </Fragment>
+          
         ))}
       </div>
       <Button onClick={()=>onWidgetListChange(editedWidget)} className={styles.modalSaveButton}>zapisz zmiany</Button>

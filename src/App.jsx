@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
-import "./App.css";
+import { useEffect, useState, useReducer } from "react";
+import { widgetReducer } from "./widgetReducer";
 
 import Widgets from "./components/Widget/Widget";
 import Navigation from "./components/Navigation/Navigation";
 
+
 import clsx from "clsx";
+import "./App.css";
 
 function App() {
   const [navOpen, setNavOpen] = useState(false);
@@ -12,16 +14,14 @@ function App() {
 
   const [theme, setTheme] = useState("light");
 
-  const [widgetList, setWidgetList] = useState([
+  const initialWidgets = [
     { name: "example", id: 1, url: "https://example.com/" },
     { name: "demoqua", id: 2, url: "https://demoqa.com/" },
     { name: "webdriver", id: 3, url: "https://webdriveruniversity.com/index.html" },
     { name: "widget 4", id: 4, url: "https://www.saucedemo.com/" },
-  ]);
+  ];
 
-  // =================================
-  // THEME
-  // =================================
+const [widgetList, setWidgetList] = useState(initialWidgets)
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -49,7 +49,6 @@ function App() {
         onTimerChange={setTimeoutValue}
         widgetList={widgetList}
         onWidgetListChange={setWidgetList}
-
         theme={theme}
         onThemeToggle={toggleTheme}
       />
