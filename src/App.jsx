@@ -1,39 +1,33 @@
-import { useEffect, useState, useReducer } from "react";
-import { widgetReducer } from "./widgetReducer";
+
+import { useEffect, useState } from "react";
+import { WidgetContextProvider } from "./context/WidgetContext";
 
 import Widgets from "./components/Widget/Widget";
 import Navigation from "./components/Navigation/Navigation";
-
 
 import clsx from "clsx";
 import "./App.css";
 
 function App() {
+  return (
+    <WidgetContextProvider>
+      <AppContent />
+    </WidgetContextProvider>
+  );
+}
+
+function AppContent() {
   const [navOpen, setNavOpen] = useState(false);
   const [timeoutValue, setTimeoutValue] = useState(30);
-
   const [theme, setTheme] = useState("light");
-
-  const initialWidgets = [
-    { name: "example", id: 1, url: "https://example.com/" },
-    { name: "demoqua", id: 2, url: "https://demoqa.com/" },
-    { name: "webdriver", id: 3, url: "https://webdriveruniversity.com/index.html" },
-    { name: "widget 4", id: 4, url: "https://www.saucedemo.com/" },
-  ];
-
-const [widgetList, setWidgetList] = useState(initialWidgets)
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((current) => current === "light" ? "dark" : "light");
+    setTheme((current) => (current === "light" ? "dark" : "light"));
   };
-
-  // =================================
-  // TIMEOUT
-  // =================================
 
   useEffect(() => {
     console.log(timeoutValue);
@@ -41,25 +35,17 @@ const [widgetList, setWidgetList] = useState(initialWidgets)
 
   return (
     <div className={clsx("app", !navOpen && "nav-closed")}>
-
       <Navigation
         open={navOpen}
         onToggle={() => setNavOpen((o) => !o)}
         timeoutValue={timeoutValue}
         onTimerChange={setTimeoutValue}
-        widgetList={widgetList}
-        onWidgetListChange={setWidgetList}
-        theme={theme}
         onThemeToggle={toggleTheme}
       />
 
       <div className="main">
-        <Widgets
-          timeoutValue={timeoutValue}
-          widgetList={widgetList}
-        />
+        <Widgets timeoutValue={timeoutValue} />
       </div>
-
     </div>
   );
 }
